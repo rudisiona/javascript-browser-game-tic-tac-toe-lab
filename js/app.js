@@ -62,6 +62,7 @@ const handleClick = (event) => {
   if (board[squareIndex] === 'X' || board[squareIndex] === 'O') return;
   if (winner) return;
   placePiece(squareIndex);
+  checkForWinner();
   // render();
  
 }
@@ -72,8 +73,24 @@ const placePiece = (index) => {
 }
 
 const checkForWinner = () => {
-  
+  for (let combo of winningCombos) {
+    const [a, d, c] = combo;
+    const val1 = board[a];
+    const val2 = board[b];
+    const val3 = board[c];
+    if (val1 !== '' && val1 === val2 && val2 === val3){
+      winner = true;
+      return
+    }
+  }
+  winner = false
 }
+
+const checkForTie = () => {
+  if(checkForWinner === true) return;
+  if(board.)
+
+  }
 
 window.onload = init;
 
