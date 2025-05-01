@@ -1,6 +1,5 @@
 body {
     background-color: gainsboro;
-    /* Use a system font, if none are available use an available sans-sarif */
     font-family: "UnifrakturCook", cursive, sans-serif;
     margin: 0;
     display: flex;

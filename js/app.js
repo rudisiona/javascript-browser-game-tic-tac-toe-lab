@@ -10,7 +10,6 @@ const winningCombos = [
   [2, 4, 6]
 ]
 
-
 /*---------------------------- Variables (state) ----------------------------*/
 let board;
 let turn;
@@ -25,7 +24,7 @@ const squareEls = document.querySelectorAll('.sqr')
 
 const messageEl = document.querySelector('#message')
 // console.log(messageEl)
-const boardEl = document.querySelector('.board'); 
+const boardEl = document.querySelector('.board') 
 
 const resetBtnEl = document.querySelector('.reset-btn')
 /*-------------------------------- Functions --------------------------------*/
@@ -36,8 +35,8 @@ const init =  () => {
   winner = false;
   tie = false;
   render()
-  
 }
+
 const render = () => {
 updateBoard()
 updateMessage()
@@ -48,6 +47,7 @@ const updateBoard = () => {
     squareEls[idx].textContent = square;
   })
 }
+
 const updateMessage = () => {
   if (winner === false && tie === false) {
   messageEl.textContent = `${turn}'s turn`
@@ -58,8 +58,7 @@ const updateMessage = () => {
   } else {
     messageEl.textContent = `W goes to O`
   }
-    
-  }
+ }
 
 const handleClick = (event) => {
   const clickedSquare = event.target;
@@ -72,8 +71,7 @@ const handleClick = (event) => {
   checkForTie();
   switchPlayerTurn();
   render();
- 
-}
+ }
 
 const placePiece = (index) => {
   board[index] = turn
